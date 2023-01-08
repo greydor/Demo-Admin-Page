@@ -1,9 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap');
 
 :root {
-    --mint-green: rgb(213, 228, 218);
+    --mint-green: #e3fcef;
+    --dark-green: #064E3B;
+    --subtext-color: rgb(99, 99, 99);
 }
-  
+
+h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+h2, h3 {
+    margin-bottom: 2px;
+}
 
 html {
     font-family: 'Roboto', sans-serif;
@@ -19,13 +29,99 @@ main {
     grid-row: 2;
     grid-column: 2;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2.5fr 1fr;
     background-color: var(--mint-green);
+    gap: 20px;
+}
+
+.projects {
+    margin: 20px 0 20px 20px;
+}
+
+.projects-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    background-color: var(--mint-green);
+    gap: 20px;
+}
+
+.card {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 200px;
+}
+
+.card p {
+    font-size: .9rem;
+    color: var(--subtext-color);
+}
+
+.card-icons {
+    justify-self: end;
+    display: flex;
+    gap: 15px;
+}
+
+.card-icons img {
+    height: 20px;
+    width: auto;
+}
+
+.main-right {
+    margin: 20px 20px 20px 0;
+}
+
+.announcements {
+    margin-bottom: 20px;
+}
+
+.announcements h3 {
+    font-size: .9rem;
+}
+
+.announcements-message-mid {
+    border-top: solid var(--subtext-color) 2px;
+    border-bottom: solid var(--subtext-color) 2px;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+
+.announcements p {
+    font-size: .8rem;
+    color: var(--subtext-color);
+}
+
+.trending-container {
+    display: grid;
+    gap: 20px;
+}
+
+.trending-item {
+    display: flex;
+    align-items: center;
+    font-size: .9rem;
+}
+
+.trending-item img {
+    height: 40px;
+    width: auto;
+    margin-right: 20px;
+}
+
+.trending-description {
+    display: grid;
+    gap: 2px;
+}
+
+.trending-project {
+    color: var(--subtext-color);
 }
 
 nav {
     grid-column: 1;
     grid-row: 1 / -2;
+    background-color: var(--dark-green);
+    color: white;
 }
 
 nav ul {
@@ -39,7 +135,7 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: black;
+    color: white;
     display: block;
     margin-left: 12px;
 }
@@ -67,7 +163,8 @@ nav h1 {
 }
 
 .logo {
-    background-image: url("/image/land-plots.svg")
+    background-image: url("/image/land-plots.svg");
+    margin-bottom: 30px;
 }
 
 .home {
@@ -107,9 +204,12 @@ nav h1 {
     background-image: url("/image/shield-check.svg");
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+.card, 
+.announcements-container,
+.trending-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
 }
 
 header {
@@ -217,6 +317,14 @@ header input {
     grid-column: -2 /-1;
     display: flex;
     gap: 15px;
+}
+
+.header-buttons button {
+    border-style: none;
+    color: white;
+    background-color: var(--dark-green);
+    padding: 8px 25px;
+    border-radius: 1.5rem;
 }
 
 .header-top-row-right {
